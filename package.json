@@ -3,6 +3,7 @@
   "displayName": "toggle-ime-in-ChordMode",
   "description": "",
   "version": "0.0.1",
+  "author": {"url": "https://github.com/guttyon"},
   "repository": {"url": "https://github.com/guttyon/vscode-extension-toggle-ime-in-ChordMode"},
   "engines": {
     "vscode": "^1.72.0"
