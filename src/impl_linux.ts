@@ -21,7 +21,14 @@ export function activate(){
         });
         return cpr;
     }
-
+    function getImeState(){
+        let cpr = cmdexec('fcitx-remote');
+        let state = cpr.stdout?.read();
+        let eng = state === '1';
+        let ime = state === '2';
+        let closed = state === '0';
+        return ime;
+    }
     switchIme = (enable: number) => {
         if(enable === 0){
             let cpr = cmdexec('fcitx-remote -c');
@@ -30,6 +37,8 @@ export function activate(){
         }
     }
     toggleIme = () => { 
+        cmdexec('fcitx-remote -t');
+        return;
         let enable = 0;
         if(enable === 0){
             let cpr = cmdexec('fcitx-remote -c');
