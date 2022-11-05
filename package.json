@@ -23,15 +23,53 @@
     "commands": [
       {
         "command": "keybindingChordMode",
-        "title": "ime.keybindingChordMode"
+        "title": "toggle-ime: keybindingChordMode"
       },
       {
-        "command": "toggleIme",
-        "title": "ime.toggleIme"
+        "command": "toggle-ime.toggleIme",
+        "title": "toggle-ime: toggleIme"
       },
       {
-        "command": "ime.hook",
-        "title": "ime.hook"
+        "command": "toggle-ime.switchImeOn",
+        "title": "toggle-ime: switchImeOn"
+      },
+      {
+        "command": "toggle-ime.switchImeOff",
+        "title": "toggle-ime: switchImeOff"
+      },
+      {
+        "command": "toggle-ime.hook",
+        "title": "toggle-ime: hook"
+      }
+    ],
+    "configuration": [
+      {
+        "id": "toggle-ime.configuration",
+        "title": "toggle-ime",
+        "properties": {
+          "toggle-ime.change-cursor.enable": {
+            "type": "boolean",
+            "default": true,
+            "description": "Enable changing cursor style.",
+            "scope": "resource"
+          },
+          "toggle-ime.cursor-style.direct": {
+            "type": "string",
+            "description": "Cursor style with direct input mode.",
+            "enum": ["Line", "Block", "Underline", "LineThin", "BlockOutline", "UnderlineThin"],
+            "default": "Line",
+            "enumDescriptions": ["vertical thick line", "block filled", "thick horizontal line", "vertical thin line", "block outlined", "thin horizontal line"],
+            "scope": "resource"
+          },
+          "toggle-ime.cursor-style.ime": {
+            "type": "string",
+            "description": "Cursor style with IME input mode.",
+            "enum": ["Line", "Block", "Underline", "LineThin", "BlockOutline", "UnderlineThin"],
+            "default": "Block",
+            "enumDescriptions": ["vertical thick line", "block filled", "thick horizontal line", "vertical thin line", "block outlined", "thin horizontal line"],
+            "scope": "resource"
+          }
+        }
       }
     ]
   },

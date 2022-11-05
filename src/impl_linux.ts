@@ -3,7 +3,7 @@ import * as ffi from 'ffi-napi';
 import { ChildProcess, exec } from 'child_process';
 
 export let switchIme: (enable:number) => void;
-export let toggleIme: () => void;
+export let toggleIme: () => boolean;
 
 export function activate(){
     function cmdexec(cmd:string){
@@ -38,7 +38,7 @@ export function activate(){
     }
     toggleIme = () => { 
         cmdexec('fcitx-remote -t');
-        return;
+        return getImeState();
         let enable = 0;
         if(enable === 0){
             let cpr = cmdexec('fcitx-remote -c');
